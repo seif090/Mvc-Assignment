@@ -1,0 +1,50 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+<h1>SignUp</h1>
+
+<form asp-action="Signup" enctype="multipart/form-data">
+
+    <div class="form-group">
+
+        <label asp-for="FirstName">FirstName</label>
+        <input type="text" asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+
+        <label asp-for="LastName">LastName</label>
+        <input type="text" asp-for="LastName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="Email">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="Password">Password</label>
+        <input type="text" asp-for="Password" class="form-control" />
+    </div>
+    <div class="form-group">
+
+        <label asp-for="ConfirmPassword">ConfirmPassword</label>
+        <input type="text" asp-for="ConfirmPassword" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+
+        <input type="checkbox" asp-for="IsAgree" class="form-control" />
+        <label asp-for="IsAgree">I Agree To term and condition</label>
+    </div>
+
+
+    <input type="submit" value="signup" class="btn btn-primary" />
+@*    <a asp-action="/Index" class="btn btn-light">Back to list</a>*@
+</form>
+
+        <a asp-action="Login" style="color:white">Login Now</a>

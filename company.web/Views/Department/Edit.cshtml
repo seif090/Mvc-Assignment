@@ -1,0 +1,43 @@
+﻿@using company.web.Controllers;
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @if (TempData["Error"] != null)
+                {
+                    <p>@TempData["Error"]</p>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="closeModalBtn" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var modalId = '@Model.Id';
+    document.addEventListener("DOMContentLoaded", function () {
+        var errorMessage = '@TempData["Error"]';
+        if (errorMessage) {
+            var modal = document.getElementById('errorModal');
+            var bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
+        }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener to the close button
+        var closeModalBtn = document.getElementById('closeModalBtn');
+        closeModalBtn.addEventListener('click', function () {
+ 
+
+        });
+    });
+
+</script>
